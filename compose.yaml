@@ -1,0 +1,11 @@
+services:
+  python:
+    build:
+      context: ./
+    volumes:
+      - ${SOURCE:-./src}:${TARGET:-/src}
+    environment:
+      - TZ=${TZ:-UTC}
+    restart: always
+    tty: true
+    stdin_open: true
